@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Huzaifa — Portfolio | BD Specialist • AI & CV • SQA • UI/UX</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide & Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              bg: '#07090e',
+              surface: '#0d121c',
+              elevated: '#131b2a',
+              card: 'rgba(16, 24, 39, 0.75)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderHover: 'rgba(56, 189, 248, 0.35)',
+              blue: '#3b82f6',
+              cyan: '#06b6d4',
+              sky: '#38bdf8',
+              emerald: '#10b981',
+              violet: '#8b5cf6',
+            }
+          },
+          animation: {
+            'float-slow': 'float 5s ease-in-out infinite',
+            'float-delay': 'float 5s ease-in-out infinite 2.5s',
+            'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+            'spin-slow': 'spin 18s linear infinite',
+            'spin-reverse': 'spinReverse 22s linear infinite',
+            'morph': 'morph 8s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-14px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.45', transform: 'scale(1)' },
+              '50%': { opacity: '0.85', transform: 'scale(1.05)' },
+            },
+            spinReverse: {
+              '0%': { transform: 'rotate(360deg)' },
+              '100%': { transform: 'rotate(0deg)' }
+            },
+            morph: {
+              '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+              '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Vercel-style blur and custom glow effects */
+    .glass-nav {
+      background: rgba(7, 9, 14, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-panel {
+      background: rgba(13, 18, 28, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-panel:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-2px);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-pill {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+    }
+
+    /* 3D tilt perspective container */
+    .tilt-card-container {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+    .tilt-card {
+      transition: transform 0.15s ease-out, box-shadow 0.25s ease-out;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .tilt-glare {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+      mix-blend-mode: overlay;
+      z-index: 20;
+    }
+    .tilt-card:hover .tilt-glare {
+      opacity: 1;
+    }
+
+    /* Radiant Animated Gradient Conic Ring */
+    .animated-ring-gradient {
+      background: conic-gradient(from 0deg, #38bdf8, #818cf8, #c084fc, #06b6d4, #38bdf8);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-bg text-slate-200 font-sans selection:bg-cyan-500/20 selection:text-cyan-300 antialiased overflow-x-hidden relative min-h-screen">
+
+  <!-- Radial Background Lighting Orbs (Vercel Style) -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-sky-500/15 via-indigo-500/5 to-transparent blur-[120px] pointer-events-none -z-10 animate-pulse-glow"></div>
+  <div class="fixed -bottom-20 right-0 w-[500px] h-[500px] bg-cyan-600/10 blur-[150px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 -left-40 w-[450px] h-[450px] bg-violet-600/10 blur-[150px] pointer-events-none -z-10"></div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-sm shadow-md shadow-sky-500/20 group-hover:scale-105 transition">
+          H
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-bold tracking-tight text-white group-hover:text-sky-400 transition">Muhammad Huzaifa</span>
+          <span class="text-[10px] font-mono text-slate-400 -mt-1">Portfolio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300 font-mono">
+        <a href="#about" class="hover:text-white transition">/about</a>
+        <a href="#experience" class="hover:text-white transition">/experience</a>
+        <a href="#projects" class="hover:text-white transition">/projects</a>
+        <a href="#skills" class="hover:text-white transition">/skills</a>
+        <a href="#education" class="hover:text-white transition">/education</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white/5 hover:bg-white/10 text-white border border-white/10 transition">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right text-[10px] text-sky-400"></i>
+        </a>
+        <a href="#cv-modal" onclick="openCvModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition shadow-sm shadow-sky-500/25">
+          <i class="fa-solid fa-download text-[11px]"></i>
+          <span>Resume</span>
+        </a>
+        <button id="navToggle" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-sm"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="hidden md:hidden px-6 py-5 bg-brand-surface/95 border-b border-brand-border space-y-3 font-mono text-xs">
+      <a href="#about" class="block text-slate-300 hover:text-sky-400 py-1.5">/about</a>
+      <a href="#experience" class="block text-slate-300 hover:text-sky-400 py-1.5">/experience</a>
+      <a href="#projects" class="block text-slate-300 hover:text-sky-400 py-1.5">/projects</a>
+      <a href="#skills" class="block text-slate-300 hover:text-sky-400 py-1.5">/skills</a>
+      <a href="#education" class="block text-slate-300 hover:text-sky-400 py-1.5">/education</a>
+      <a href="#contact" class="block text-sky-400 font-semibold py-1.5">/contact</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20 space-y-28">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="pt-8 sm:pt-14 pb-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Quick Action -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="flex flex-wrap items-center gap-2.5">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-pill text-xs font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Open for Global Roles & Relocation
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">
+              <i class="fa-solid fa-location-dot text-sky-400 text-[11px]"></i>
+              Depalpur, Pakistan
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+            Building & Scaling <br />
+            <span class="cyan-gradient-text">Intelligent Tech & Growth</span>
+          </h1>
+
+          <p class="text-lg text-slate-300 leading-relaxed font-normal max-w-xl">
+            I am <strong class="text-white">Muhammad Huzaifa</strong> — a multifaceted technologist combining <strong class="text-sky-300">Business Development</strong> with deep technical grounding in <strong class="text-white">AI Image Segmentation</strong>, <strong class="text-white">SQA Automation</strong>, and <strong class="text-white">UI/UX Product Design</strong>.
+          </p>
+
+          <!-- Highlights Bar -->
+          <div class="grid grid-cols-3 gap-3 py-2 max-w-lg">
+            <div class="p-3 rounded-xl bg-brand-surface/60 border border-brand-border text-center">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-white">25+</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Appts. Booked (BD)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-brand-surface/60 border border-brand-border text-center">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-sky-400">U-Net</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Biomedical AI FYP</div>
+            </div>
+            <div class="p-3 rounded-xl bg-brand-surface/60 border border-brand-border text-center">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-400">Selenium</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">QA Automation</div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#projects" class="px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2 shadow-lg shadow-sky-500/20">
+              <i class="fa-solid fa-cubes-stacked"></i> View My Work
+            </a>
+            <a href="#contact" class="px-5 py-3 rounded-xl glass-panel text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane text-sky-400"></i> Get In Touch
+            </a>
+            <div class="flex items-center gap-2 pl-2">
+          <a href="https://linkedin.com/in/ch-huzaiifa" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-sky-400 transition" title="LinkedIn">
+            <i class="fa-brands fa-linkedin text-sm"></i>
+          </a>
+          <a href="mailto:huzaifachaudhary593@gmail.com" class="p-3 rounded-xl glass-panel text-slate-300 hover:text-sky-400 transition" title="Email">
+            <i class="fa-solid fa-envelope text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hero Photo with Animated Rings, 3D Tilt & Floating Skill Chips -->
+    <div class="lg:col-span-5 flex justify-center items-center relative py-6">
+      
+      <div id="tiltHeroContainer" class="tilt-card-container relative w-72 sm:w-84">
+        
+        <!-- Outer Conic Spinning Ring Aura -->
+        <div class="absolute -inset-4 rounded-full animated-ring-gradient animate-spin-slow opacity-60 blur-xl"></div>
+        <div class="absolute -inset-2 rounded-full animated-ring-gradient animate-spin-reverse opacity-40 blur-md"></div>
+
+        <!-- 3D Tilting Card Wrapper -->
+        <div id="tiltCard" class="tilt-card relative rounded-3xl p-2 bg-gradient-to-b from-white/20 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden group">
+          
+          <!-- Dynamic Lighting / Glare Reflection -->
+          <div id="tiltGlare" class="tilt-glare"></div>
+
+          <!-- Circular Portrait Image Holder with Floating Animation -->
+          <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-brand-surface border border-white/10 animate-float-slow">
+            <img 
+              id="heroProfilePic"
+              src="Profile_Picture.jpg" 
+              alt="Muhammad Huzaifa" 
+              class="w-full h-full object-cover object-top filter brightness-105 contrast-105 group-hover:scale-105 transition-all duration-700 ease-out"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x750/0f172a/38bdf8?text=Muhammad+Huzaifa';"
+            />
+
+            <!-- Subtle dark gradient vignette for readable tags -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent opacity-80 pointer-events-none"></div>
+
+            <!-- Status Indicator Overlay inside portrait -->
+            <div class="absolute top-3 left-3 flex items-center gap-2 px-2.5 py-1 rounded-full bg-brand-bg/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-emerald-300">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Online • Open for Roles</span>
+            </div>
+
+            <!-- Bottom Title Badge inside picture -->
+            <div class="absolute bottom-3 inset-x-3 text-center">
+              <div class="text-sm font-bold text-white tracking-wide">Muhammad Huzaifa</div>
+              <div class="text-[11px] font-mono text-sky-400">Business Dev & AI Technologist</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Animated Floating Badge Chip 1: Business Development (Top Left) -->
+        <div class="absolute -top-5 -left-8 glass-panel px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-xl border border-sky-400/30 animate-float-slow z-30">
+          <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs shadow-inner">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="text-left font-mono">
+            <div class="text-[10px] text-slate-400">Business Dev</div>
+            <div class="text-xs font-bold text-white">25+ Wins Closed</div>
+          </div>
+        </div>
+
+        <!-- Animated Floating Badge Chip 2: AI & CV (Bottom Right) -->
+        <div class="absolute -bottom-5 -right-6 glass-panel px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-xl border border-emerald-400/30 animate-float-delay z-30">
+          <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs shadow-inner">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="text-left font-mono">
+            <div class="text-[10px] text-slate-400">Deep Learning</div>
+            <div class="text-xs font-bold text-emerald-300">Image Segmentation</div>
+          </div>
+        </div>
+
+        <!-- Animated Floating Badge Chip 3: UI/UX & SQA (Top Right) -->
+        <div class="hidden sm:flex absolute top-12 -right-10 glass-panel px-3 py-1.5 rounded-xl items-center gap-2 shadow-lg border border-violet-400/30 animate-float-slow z-30">
+          <div class="w-6 h-6 rounded-md bg-violet-500/20 text-violet-400 flex items-center justify-center text-[11px]">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <span class="text-[11px] font-mono font-medium text-slate-200">UI/UX & SQA</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="scroll-mt-24">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="text-xs font-mono uppercase tracking-widest text-sky-400">01 // Profile & Background</span>
+    <div class="h-[1px] flex-1 bg-brand-border"></div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    
+    <!-- Animated Mini Profile Card in About -->
+    <div class="lg:col-span-4 flex justify-center">
+      <div class="relative group p-1">
+        <!-- Morphing glowing back aura -->
+        <div class="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-600 opacity-30 group-hover:opacity-75 blur-lg transition duration-500 animate-morph"></div>
+        
+        <div class="relative glass-panel rounded-2xl p-5 border border-white/10 text-center space-y-4">
+          <div class="relative mx-auto w-28 h-28 rounded-full overflow-hidden border-2 border-sky-400/60 shadow-lg group-hover:scale-105 transition duration-500">
+            <img 
+              src="Profile_Picture.jpg" 
+              alt="Muhammad Huzaifa avatar" 
+              class="w-full h-full object-cover object-top"
+              onerror="this.onerror=null; this.src='https://placehold.co/300x300/0f172a/38bdf8?text=MH';"
+            />
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white">Muhammad Huzaifa</h4>
+            <p class="text-xs font-mono text-sky-400">Depalpur, Pakistan</p>
+          </div>
+          <div class="pt-3 border-t border-brand-border/60 flex justify-center gap-3 text-slate-400 text-sm">
+            <a href="https://linkedin.com/in/ch-huzaiifa" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:huzaifachaudhary593@gmail.com" class="hover:text-sky-400 transition" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1lFj2tTn396g92wc6_-Uxw64XU4cEqyFc?usp=drive_link" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition" title="UI/UX Drive">
+              <i class="fa-brands fa-google-drive"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-8 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+      <p>
+        Based in <strong class="text-white">Depalpur, Pakistan</strong>, I bring a unique dual-capacity advantage to technology teams: the analytical rigor of an engineering mindset combined with high-impact communication and business acquisition acumen.
+      </p>
+      <p>
+        As a <strong class="text-sky-400">Business Development Specialist at Code Squad</strong>, I drove multi-channel lead generation, built automated data scraping workflows, and managed end-to-end client engagement pipelines resulting in over 25 successful international appointment conversions.
+      </p>
+      <p>
+        On the technical front, I have hands-on experience in <strong class="text-white">Software Quality Assurance (SQA)</strong> at <strong class="text-white">TDM</strong> executing automated test suites with Python and Selenium, deep learning research in <strong class="text-white">Cancer Cell Image Segmentation (OncoVision)</strong>, and intuitive <strong class="text-white">UI/UX Design Systems in Figma</strong>.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 font-mono text-xs">
+        <div class="glass-panel p-3 rounded-xl">
+          <span class="text-slate-400 block mb-0.5">Location</span>
+          <span class="text-white font-semibold">Depalpur, Pakistan</span>
+        </div>
+        <div class="glass-panel p-3 rounded-xl">
+          <span class="text-slate-400 block mb-0.5">Degree</span>
+          <span class="text-white font-semibold">BS Computer Science</span>
+        </div>
+        <div class="glass-panel p-3 rounded-xl">
+          <span class="text-slate-400 block mb-0.5">Status</span>
+          <span class="text-emerald-400 font-semibold">Available for Work</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">01 // Profile & Background</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p>
+            Based in <strong class="text-white">Depalpur, Pakistan</strong>, I bring a unique dual-capacity advantage to technology teams: the analytical rigor of an engineering mindset combined with high-impact communication and business acquisition acumen.
+          </p>
+          <p>
+            As a <strong class="text-sky-400">Business Development Specialist at Code Squad</strong>, I drove multi-channel lead generation, built automated data scraping workflows, and managed end-to-end client engagement pipelines resulting in over 25 successful international appointment conversions.
+          </p>
+          <p>
+            On the technical front, I have hands-on experience in <strong class="text-white">Software Quality Assurance (SQA)</strong> at <strong class="text-white">TDM</strong> executing automated test suites with Python and Selenium, deep learning research in <strong class="text-white">Cancer Cell Image Segmentation (OncoVision)</strong>, and intuitive <strong class="text-white">UI/UX Design Systems in Figma</strong>.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 space-y-3 font-mono text-xs">
+          <div class="glass-panel p-4 rounded-xl">
+            <span class="text-slate-400 block mb-1">Location</span>
+            <span class="text-white font-semibold">Depalpur, Punjab, Pakistan</span>
+          </div>
+          <div class="glass-panel p-4 rounded-xl">
+            <span class="text-slate-400 block mb-1">Education</span>
+            <span class="text-white font-semibold">BS Computer Science (UCP Lahore)</span>
+          </div>
+          <div class="glass-panel p-4 rounded-xl">
+            <span class="text-slate-400 block mb-1">Languages</span>
+            <span class="text-white font-semibold">English (Professional), Urdu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section id="experience" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">02 // Experience & Trajectory</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Experience 1: Code Squad (BD & Lead Gen) -->
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-sky-500">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-xl font-bold text-white">Business Development Specialist</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-sky-950 text-sky-400 text-[10px] font-mono border border-sky-800/40">Growth & Sales</span>
+              </div>
+              <p class="text-sm font-medium text-slate-300 mt-1">Code Squad Software House</p>
+            </div>
+            <div class="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+              Appointment Booking & CRM
+            </div>
+          </div>
+
+          <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+            Led targeted international market penetration and outbound deal acquisition for custom software and engineering services.
+          </p>
+
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5 list-disc list-inside leading-relaxed">
+            <li><strong class="text-white">Appointment Generation & Deal Closing:</strong> Successfully prospected, qualified, and booked over <span class="text-sky-300 font-semibold">25 high-value client appointments</span>, winning several key development contracts from overseas businesses.</li>
+            <li><strong class="text-white">Multi-Source Web & Data Scraping:</strong> Engineered custom automated scraping bots and crawlers to harvest targeted company, decision-maker, and email leads at scale across LinkedIn, Crunchbase, directories, and corporate registries.</li>
+            <li><strong class="text-white">CRM & Pipeline Optimization:</strong> Maintained centralized CRM trackers, automated multi-stage email follow-up sequences, managed pipeline metrics, and synchronized client requirements seamlessly with internal engineering teams.</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-brand-border/60 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-sky-400 border border-slate-800">Lead Generation</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-sky-400 border border-slate-800">Automated Data Scraping</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-sky-400 border border-slate-800">CRM Lifecycle</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-sky-400 border border-slate-800">Cold Outreach</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-sky-400 border border-slate-800">Proposal Scoping</span>
+          </div>
+        </div>
+
+        <!-- Experience 2: TDM (SQA) -->
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-emerald-500">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-xl font-bold text-white">Software Quality Assurance (SQA) Engineer</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-400 text-[10px] font-mono border border-emerald-800/40">Quality Engineering</span>
+              </div>
+              <p class="text-sm font-medium text-slate-300 mt-1">TDM Software House</p>
+            </div>
+            <div class="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+              Automation & Manual QA
+            </div>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5 list-disc list-inside leading-relaxed">
+            <li><strong class="text-white">Selenium Test Automation:</strong> Scripted robust test automation workflows in Python using Selenium WebDriver to perform comprehensive end-to-end regression runs across staging environments.</li>
+            <li><strong class="text-white">Test Case Strategy & Execution:</strong> Formulated structured test matrices, edge-case scenarios, functional testing schedules, and smoke/sanity testing procedures.</li>
+            <li><strong class="text-white">Bug Tracking & Quality Reporting:</strong> Documented, categorized, and tracked software defects from reproduction to resolution, coordinating closely with developers to ensure zero-defect deployments.</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-brand-border/60 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-800">Python</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-800">Selenium WebDriver</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-800">Regression Testing</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-800">API Testing</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-emerald-400 border border-slate-800">Jira / Bug Lifecycle</span>
+          </div>
+        </div>
+
+        <!-- Experience 3: SIFT (AI / CV) -->
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl relative overflow-hidden border-l-4 border-l-violet-500">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-xl font-bold text-white">Artificial Intelligence & Computer Vision Intern</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-violet-950 text-violet-400 text-[10px] font-mono border border-violet-800/40">AI Research</span>
+              </div>
+              <p class="text-sm font-medium text-slate-300 mt-1">SIFT</p>
+            </div>
+            <div class="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+              Deep Learning
+            </div>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5 list-disc list-inside leading-relaxed">
+            <li>Implemented deep learning models and convolutional neural networks for computer vision and biomedical image classification tasks.</li>
+            <li>Engineered robust preprocessing pipelines including noise reduction, morphological operations, and data augmentation using OpenCV and Scikit-Image.</li>
+            <li>Participated in fine-tuning loss functions and hyperparameter optimization to benchmark training stability and validation accuracy.</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-brand-border/60 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-violet-400 border border-slate-800">PyTorch</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-violet-400 border border-slate-800">OpenCV</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-violet-400 border border-slate-800">CNN Architectures</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 text-violet-400 border border-slate-800">Data Augmentation</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">03 // Featured Projects</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: FYP OncoVision (Full Width Highlight) -->
+        <div class="md:col-span-2 glass-panel p-6 sm:p-9 rounded-2xl relative border border-sky-500/30">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <span class="px-3 py-1 rounded-md bg-sky-950/80 border border-sky-500/30 text-sky-300 text-xs font-mono font-semibold">
+              Capstone Research Project
+            </span>
+            <span class="text-xs font-mono text-slate-400">Deep Learning & Computer Vision</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+            OncoVision: Deep Learning Framework for Cancer Cell Segmentation
+          </h3>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
+            An automated biomedical image segmentation framework designed to accelerate clinical histopathology. The system detects, isolates, and performs pixel-level boundary delineation of malignant cell clusters from complex tissue microscopy images using modern deep learning architectures.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            <div class="p-3.5 rounded-xl bg-brand-surface border border-white/5">
+              <div class="text-xs font-mono text-sky-400 font-semibold mb-1">Architecture</div>
+              <div class="text-sm font-bold text-white">U-Net & ResNet Backbones</div>
+              <p class="text-[11px] text-slate-400 mt-1">Encoder-decoder with skip connections preserving spatial tissue granularity.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-brand-surface border border-white/5">
+              <div class="text-xs font-mono text-emerald-400 font-semibold mb-1">Metrics</div>
+              <div class="text-sm font-bold text-white">Dice & IoU Optimization</div>
+              <p class="text-[11px] text-slate-400 mt-1">Trained with hybrid Dice + Binary Cross Entropy loss to mitigate extreme background imbalance.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-brand-surface border border-white/5">
+              <div class="text-xs font-mono text-violet-400 font-semibold mb-1">Preprocessing</div>
+              <div class="text-sm font-bold text-white">Stain & Noise Normalization</div>
+              <p class="text-[11px] text-slate-400 mt-1">CLAHE contrast optimization, Macenko stain standardization, and elastic augmentations.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-brand-border">
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">Python</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">PyTorch</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">OpenCV</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">Biomedical AI</span>
+            </div>
+            <button onclick="openProjectModal('oncovision')" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1 font-semibold">
+              <span>View Deep Architecture</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: UI/UX Design System -->
+        <div class="glass-panel p-6 sm:p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded bg-violet-950/80 text-violet-300 border border-violet-800/40 text-xs font-mono">Product Design</span>
+              <span class="text-xs font-mono text-slate-400">Figma Design Drive</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Modern UI/UX Product Design Systems</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Comprehensive interface and mobile/web design collection focused on intuitive workflows, clean micro-interactions, responsive typography, and cohesive component token systems.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside mb-4">
+              <li>High-fidelity responsive layouts & interactive Figma prototypes.</li>
+              <li>Engineered accessible color schemes, buttons, and component libraries.</li>
+              <li>Iterative user experience wireframes validated against design standards.</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Figma • Design Systems • UX</span>
+            <a href="https://drive.google.com/drive/folders/1lFj2tTn396g92wc6_-Uxw64XU4cEqyFc?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-violet-400 hover:text-violet-300 flex items-center gap-1.5 font-semibold">
+              <span>Open Design Drive</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Automated Data Scraping & Lead Gen Engine -->
+        <div class="glass-panel p-6 sm:p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded bg-sky-950/80 text-sky-300 border border-sky-800/40 text-xs font-mono">Automation & Sales</span>
+              <span class="text-xs font-mono text-slate-400">Python Scraping</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Multi-Platform Data Scraping Engine</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Engineered high-throughput scraping bots to extract B2B executive contact details, corporate web footprints, and technological domains to power direct appointment booking funnels.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside mb-4">
+              <li>Handles dynamic pagination, rate limits, proxy rotation, and headful/headless states.</li>
+              <li>Exports normalized, deduplicated lead files directly into CRM repositories.</li>
+              <li>Fuelled over 25+ successful closed appointments at Code Squad.</li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Python • BeautifulSoup • Selenium</span>
+            <button onclick="openProjectModal('scraper')" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1.5 font-semibold">
+              <span>View Details</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX -->
+    <section id="skills" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">04 // Core Skills</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Pillar 1: BD -->
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="w-9 h-9 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-sm mb-3">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">Business & Growth</h4>
+          <ul class="text-xs font-mono text-slate-300 space-y-2">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Appointment Booking</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>B2B Lead Generation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Data Scraping Pipelines</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>CRM Automation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Client Communications</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: AI & CV -->
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-sm mb-3">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">AI & Computer Vision</h4>
+          <ul class="text-xs font-mono text-slate-300 space-y-2">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Image Segmentation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>CNN & U-Net Models</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>PyTorch & OpenCV</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Biomedical Analysis</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Data Augmentation</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3: SQA -->
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="w-9 h-9 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-sm mb-3">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">SQA & Testing</h4>
+          <ul class="text-xs font-mono text-slate-300 space-y-2">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Selenium Automation</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Python Test Scripts</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Regression Testing</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Bug Lifecycle Tracking</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Test Case Design</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4: UI/UX Design -->
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="w-9 h-9 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 text-sm mb-3">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2">UI/UX & Product</h4>
+          <ul class="text-xs font-mono text-slate-300 space-y-2">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Figma Prototyping</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Design Systems</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Wireframing</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>Mobile App UI</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>User Workflows</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">05 // Education</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-white/10">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-sky-950 text-sky-400 text-xs font-mono border border-sky-800/40">2022 — 2026</span>
+            <span class="text-xs font-mono text-slate-400">Lahore, Pakistan</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Bachelor of Science in Computer Science (BSCS)</h3>
+          <p class="text-base text-slate-300 font-medium">University of Central Punjab (UCP)</p>
+          <p class="text-xs text-slate-400 max-w-2xl leading-relaxed">
+            Curriculum focused on Artificial Intelligence, Deep Learning, Software Quality Assurance, Algorithms, Database Systems, Computer Vision, and Distributed Application Architectures.
+          </p>
+        </div>
+        <div class="shrink-0 p-4 rounded-xl bg-brand-surface border border-brand-border text-center">
+          <div class="text-xs font-mono text-slate-400">Focus Area</div>
+          <div class="text-sm font-bold text-sky-400 font-mono mt-1">AI & Computer Vision</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">06 // Connect</span>
+        <div class="h-[1px] flex-1 bg-brand-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Contact Meta -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="glass-panel p-6 rounded-2xl space-y-5">
+            <div>
+              <h3 class="text-xl font-bold text-white">Let's Build Something</h3>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                Available for business development contracts, QA automation, and AI/engineering opportunities.
+              </p>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <a href="mailto:huzaifachaudhary593@gmail.com" class="flex items-center gap-3 p-3 rounded-xl bg-brand-surface hover:bg-white/5 border border-white/5 transition">
+                <i class="fa-solid fa-envelope text-sky-400 text-sm"></i>
+                <div class="truncate">
+                  <div class="text-[10px] text-slate-400">Email Directly</div>
+                  <span class="text-white">huzaifachaudhary593@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com/in/ch-huzaiifa" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-brand-surface hover:bg-white/5 border border-white/5 transition">
+                <i class="fa-brands fa-linkedin text-sky-400 text-sm"></i>
+                <div>
+                  <div class="text-[10px] text-slate-400">LinkedIn Profile</div>
+                  <span class="text-white">linkedin.com/in/ch-huzaiifa</span>
+                </div>
+              </a>
+
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-brand-surface border border-white/5">
+                <i class="fa-solid fa-location-dot text-emerald-400 text-sm"></i>
+                <div>
+                  <div class="text-[10px] text-slate-400">Primary Location</div>
+                  <span class="text-white">Depalpur, Pakistan (Open to Relocate)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl">
+            <h4 class="text-lg font-bold text-white mb-1">Send a Direct Message</h4>
+            <p class="text-xs text-slate-400 mb-6">Dispatches an email query directly to Muhammad Huzaifa.</p>
+
+            <form onsubmit="handleSendMail(event)" class="space-y-4 text-xs font-mono">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-400 mb-1.5 uppercase">Your Name</label>
+                  <input type="text" id="contactName" required placeholder="John Doe" class="w-full px-3.5 py-2.5 rounded-lg bg-brand-surface border border-brand-border text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 mb-1.5 uppercase">Your Email</label>
+                  <input type="email" id="contactEmail" required placeholder="john@example.com" class="w-full px-3.5 py-2.5 rounded-lg bg-brand-surface border border-brand-border text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-slate-400 mb-1.5 uppercase">Subject</label>
+                <input type="text" id="contactSubject" required placeholder="Project Inquiry / Job Opportunity" class="w-full px-3.5 py-2.5 rounded-lg bg-brand-surface border border-brand-border text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition" />
+              </div>
+
+              <div>
+                <label class="block text-slate-400 mb-1.5 uppercase">Message</label>
+                <textarea id="contactMessage" rows="4" required placeholder="Hi Muhammad, we reviewed your work on OncoVision and your BD experience at Code Squad..." class="w-full px-3.5 py-2.5 rounded-lg bg-brand-surface border border-brand-border text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold uppercase tracking-wider text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20">
+                <i class="fa-solid fa-paper-plane"></i> Send Direct Mail
+              </button>
+            </form>
+
+            <div id="contactToast" class="hidden mt-4 p-3 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-2">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Preparing message in your default email client...</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-border py-8 text-center text-xs font-mono text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 Muhammad Huzaifa. Depalpur, Pakistan.</div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="#hero" class="hover:text-white transition">Back to Top ↑</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/ch-huzaiifa" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME / CV MODAL -->
+  <div id="cvModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel bg-brand-surface w-full max-w-lg rounded-2xl p-6 sm:p-8 border border-white/10 relative">
+      <button onclick="closeCvModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-lg">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">Curriculum Vitae</h3>
+          <p class="text-xs text-slate-400 font-mono">Muhammad Huzaifa — Resume Overview</p>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-xs text-slate-300 font-mono bg-brand-bg/80 p-4 rounded-xl border border-brand-border mb-5">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Candidate:</span>
+          <span class="text-white font-bold">Muhammad Huzaifa</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Location:</span>
+          <span class="text-white">Depalpur, Pakistan</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Target Roles:</span>
+          <span class="text-white">Business Development / AI / SQA</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Key Accolade:</span>
+          <span class="text-emerald-400">25+ Appointments Closed at Code Squad</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Capstone Project:</span>
+          <span class="text-sky-400">OncoVision Cancer Segmentation</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="mailto:huzaifachaudhary593@gmail.com?subject=Request%20CV%20-%20Muhammad%20Huzaifa" class="flex-1 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Request Full PDF CV
+        </a>
+        <button onclick="closeCvModal()" class="py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono transition">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel bg-brand-surface w-full max-w-xl rounded-2xl p-6 sm:p-8 border border-white/10 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // 3D Interactive Mouse Tilt and Dynamic Glare Effect on Hero Profile
+    const tiltContainer = document.getElementById('tiltHeroContainer');
+    const tiltCard = document.getElementById('tiltCard');
+    const tiltGlare = document.getElementById('tiltGlare');
+
+    if (tiltContainer && tiltCard) {
+      tiltContainer.addEventListener('mousemove', (e) => {
+        const rect = tiltContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -12; // tilt degrees
+        const rotateY = ((x - centerX) / centerX) * 12;
+
+        tiltCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+        if (tiltGlare) {
+          const glareX = (x / rect.width) * 100;
+          const glareY = (y / rect.height) * 100;
+          tiltGlare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.35), transparent 60%)`;
+        }
+      });
+
+      tiltContainer.addEventListener('mouseleave', () => {
+        tiltCard.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        if (tiltGlare) {
+          tiltGlare.style.opacity = '0';
+        }
+      });
+
+      tiltContainer.addEventListener('mouseenter', () => {
+        if (tiltGlare) {
+          tiltGlare.style.opacity = '1';
+        }
+      });
+    }
+
+    // Navigation Drawer Toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    navToggle.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+    });
+    mobileDrawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileDrawer.classList.add('hidden'));
+    });
+
+    // CV Modal
+    function openCvModal() {
+      document.getElementById('cvModal').classList.remove('hidden');
+    }
+    function closeCvModal() {
+      document.getElementById('cvModal').classList.add('hidden');
+    }
+
+    // Project Details Modal Data
+    const projectData = {
+      oncovision: {
+        title: "OncoVision: Cancer Cell Segmentation",
+        tag: "Capstone Final Year Project",
+        body: `
+          <div class="space-y-4 text-xs font-mono leading-relaxed text-slate-300">
+            <p class="text-sm text-slate-200 font-sans">
+              OncoVision is an automated biomedical image analysis framework engineered to provide boundary-level segmentations of malignant cells on histopathological biopsies.
+            </p>
+            <div class="p-3 bg-brand-bg rounded-xl border border-brand-border space-y-2">
+              <div class="font-bold text-sky-400">Methodology & Deep Learning Architecture:</div>
+              <ul class="list-disc list-inside space-y-1 text-slate-300">
+                <li>Encoder-decoder convolutional network (U-Net with ResNet feature extraction backbone).</li>
+                <li>Skip connections carrying localized spatial cellular descriptors to upsampled layers.</li>
+                <li>Loss optimization: Dice loss fused with Binary Cross Entropy to balance sparse cell pixels.</li>
+                <li>Image preprocessing: Macenko stain normalization, CLAHE enhancement, and rotational augmentations.</li>
+              </ul>
+            </div>
+            <div class="p-3 bg-brand-bg rounded-xl border border-brand-border">
+              <div class="font-bold text-emerald-400">Target Outcome:</div>
+              <p class="text-slate-400 mt-1">High-overlap cellular delineation with reduced false negatives to support clinical pathology decision-making.</p>
+            </div>
+          </div>
+        `
+      },
+      scraper: {
+        title: "Multi-Platform B2B Scraping Engine",
+        tag: "Lead Generation & Outreach Tooling",
+        body: `
+          <div class="space-y-4 text-xs font-mono leading-relaxed text-slate-300">
+            <p class="text-sm text-slate-200 font-sans">
+              Developed custom automated scraping and data enrichment pipelines in Python to fuel B2B business development workflows at Code Squad.
+            </p>
+            <div class="p-3 bg-brand-bg rounded-xl border border-brand-border space-y-2">
+              <div class="font-bold text-sky-400">Core Capabilities:</div>
+              <ul class="list-disc list-inside space-y-1 text-slate-300">
+                <li>Targeted extraction of company decision-makers, direct emails, and domain footprints.</li>
+                <li>Automated anti-bot bypass, header randomization, dynamic rendering wait routines.</li>
+                <li>Clean CSV/JSON export mapped to CRM lead schemas, supporting 25+ booked project deals.</li>
+              </ul>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    function openProjectModal(key) {
+      const data = projectData[key];
+      if (!data) return;
+      const container = document.getElementById('modalContent');
+      container.innerHTML = `
+        <div class="mb-4">
+          <span class="text-[10px] font-mono text-sky-400 px-2 py-0.5 rounded bg-sky-950/80 border border-sky-800/40">${data.tag}</span>
+          <h3 class="text-xl font-bold text-white mt-2">${data.title}</h3>
+        </div>
+        ${data.body}
+        <button onclick="closeProjectModal()" class="w-full mt-6 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 text-xs font-mono transition">
+          Close Window
+        </button>
+      `;
+      document.getElementById('projectModal').classList.remove('hidden');
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+    }
+
+    // Direct Mail Dispatcher
+    function handleSendMail(e) {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('contactName').value);
+      const email = encodeURIComponent(document.getElementById('contactEmail').value);
+      const subject = encodeURIComponent(document.getElementById('contactSubject').value);
+      const msg = encodeURIComponent(document.getElementById('contactMessage').value + `\n\nSent by: ${decodeURIComponent(name)} (${decodeURIComponent(email)})`);
+
+      const toast = document.getElementById('contactToast');
+      toast.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = `mailto:huzaifachaudhary593@gmail.com?subject=${subject}&body=${msg}`;
+      }, 400);
+    }
+  </script>
+</body>
+</html>
